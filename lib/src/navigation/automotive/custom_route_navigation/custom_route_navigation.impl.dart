@@ -39,15 +39,16 @@ class CustomRouteNavigationImpl
 
   @core.override
   navigation_automotive_navigation.Navigation get navigation {
+    final result = _CustomRouteNavigation_get_navigation(ptr);
     return navigation_automotive_navigation.NavigationImpl.fromNativePtr(
-        _CustomRouteNavigation_get_navigation(ptr));
+        result);
   }
 
   navigation_guidance_camera_camera.Camera createCamera(
       mapkit_map_map_window.MapWindow mapWindow) {
-    return navigation_guidance_camera_camera.CameraImpl.fromNativePtr(
-        _CustomRouteNavigation_createCamera(
-            ptr, mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow)));
+    final result = _CustomRouteNavigation_createCamera(
+        ptr, mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow));
+    return navigation_guidance_camera_camera.CameraImpl.fromNativePtr(result);
   }
 
   void startGuidance(directions_driving_route.DrivingRoute? route) {
@@ -100,8 +101,8 @@ final void Function(
     .asFunction(isLeaf: true);
 
 CustomRouteNavigation _createNavigation() {
-  return CustomRouteNavigationImpl.fromNativePtr(
-      _CustomRouteNavigationFactory_createNavigation());
+  final result = _CustomRouteNavigationFactory_createNavigation();
+  return CustomRouteNavigationImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function()

@@ -354,6 +354,21 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Float,
               ffi.Bool,
               ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+            )>(_NavigationRoutePinsStyleProvider_provideTollRoadStyle),
+        ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<ffi.Void>,
+              ffi.Float,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>,
+            )>(_NavigationRoutePinsStyleProvider_provideRestrictedEntryStyle),
+        ffi.Pointer.fromFunction<
+            ffi.Void Function(
+              ffi.Pointer<ffi.Void>,
+              ffi.Float,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideSpeedBumpStyle));
     _pointerToListener[ptr] = obj;
     _listenerToPointer[obj] = ptr;
@@ -431,6 +446,23 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Float,
               ffi.Bool,
               ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+            )>>,
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(
+              ffi.Pointer<ffi.Void>,
+              ffi.Float,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>,
+            )>>,
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(
+              ffi.Pointer<ffi.Void>,
+              ffi.Float,
+              ffi.Bool,
+              ffi.Pointer<ffi.Void>,
             )>>) _NavigationRoutePinsStyleProvider_new = lib.library
     .lookup<
             ffi.NativeFunction<
@@ -466,6 +498,23 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Float,
                               ffi.Bool,
                               ffi.Pointer<ffi.Void>,
+                              ffi.Pointer<ffi.Void>,
+                            )>>,
+                    ffi.Pointer<
+                        ffi.NativeFunction<
+                            ffi.Void Function(
+                              ffi.Pointer<ffi.Void>,
+                              ffi.Float,
+                              ffi.Bool,
+                              ffi.Pointer<ffi.Void>,
+                              ffi.Pointer<ffi.Void>,
+                            )>>,
+                    ffi.Pointer<
+                        ffi.NativeFunction<
+                            ffi.Void Function(
+                              ffi.Pointer<ffi.Void>,
+                              ffi.Float,
+                              ffi.Bool,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -585,6 +634,58 @@ void _NavigationRoutePinsStyleProvider_provideRoadInPoorConditionStyle(
           roadInPoorConditionStartStyle),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
           roadInPoorConditionEndStyle),
+    );
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+void _NavigationRoutePinsStyleProvider_provideTollRoadStyle(
+  ffi.Pointer<ffi.Void> _ptr,
+  core.double scaleFactor,
+  core.bool isNightMode,
+  ffi.Pointer<ffi.Void> tollRoadStartStyle,
+  ffi.Pointer<ffi.Void> tollRoadEndStyle,
+) {
+  final listener =
+      NavigationRoutePinsStyleProviderImpl._pointerToListener[_ptr];
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    listener.provideTollRoadStyle(
+      scaleFactor,
+      isNightMode,
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
+          tollRoadStartStyle),
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
+          tollRoadEndStyle),
+    );
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+void _NavigationRoutePinsStyleProvider_provideRestrictedEntryStyle(
+  ffi.Pointer<ffi.Void> _ptr,
+  core.double scaleFactor,
+  core.bool isNightMode,
+  ffi.Pointer<ffi.Void> style,
+) {
+  final listener =
+      NavigationRoutePinsStyleProviderImpl._pointerToListener[_ptr];
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    listener.provideRestrictedEntryStyle(
+      scaleFactor,
+      isNightMode,
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
     exception.nativeAssert(

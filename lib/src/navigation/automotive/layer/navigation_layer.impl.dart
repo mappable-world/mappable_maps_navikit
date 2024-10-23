@@ -195,52 +195,67 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
 
   @core.override
   navigation_automotive_navigation.Navigation get navigation {
+    final result = _NavigationLayer_get_navigation(ptr);
+    exception.checkCallResult();
     return navigation_automotive_navigation.NavigationImpl.fromNativePtr(
-        _NavigationLayer_get_navigation(ptr));
+        result);
   }
 
   @core.override
   navigation_guidance_camera_camera.Camera get camera {
-    return navigation_guidance_camera_camera.CameraImpl.fromNativePtr(
-        _NavigationLayer_get_camera(ptr));
+    final result = _NavigationLayer_get_camera(ptr);
+    exception.checkCallResult();
+    return navigation_guidance_camera_camera.CameraImpl.fromNativePtr(result);
   }
 
   @core.override
   RoutesSource get routesSource {
-    return RoutesSourceImpl.fromInt(_NavigationLayer_get_routesSource(ptr));
+    final result = _NavigationLayer_get_routesSource(ptr);
+    exception.checkCallResult();
+    return RoutesSourceImpl.fromInt(result);
   }
 
   @core.override
   core.List<navigation_automotive_layer_route_view.RouteView> get routes {
+    final result = _NavigationLayer_get_routes(ptr);
+    exception.checkCallResult();
     return navigation_automotive_layer_route_view.RouteViewContainerExtension
-        .toPlatformVector(_NavigationLayer_get_routes(ptr));
+        .toPlatformVector(result);
   }
 
   @core.override
   core.bool get showRequestPoints {
-    return _NavigationLayer_get_showRequestPoints(ptr);
+    final result = _NavigationLayer_get_showRequestPoints(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set showRequestPoints(core.bool val) {
     _NavigationLayer_set_showRequestPoints(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get isVisible {
-    return _NavigationLayer_get_isVisible(ptr);
+    final result = _NavigationLayer_get_isVisible(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set isVisible(core.bool val) {
     _NavigationLayer_set_isVisible(ptr, val);
+    exception.checkCallResult();
   }
 
   navigation_automotive_layer_route_view.RouteView? getView(
       directions_driving_route.DrivingRoute route) {
+    final result = _NavigationLayer_getView(
+        ptr, directions_driving_route.DrivingRouteImpl.getNativePtr(route));
+    exception.checkCallResult();
     return navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
-        _NavigationLayer_getView(ptr,
-            directions_driving_route.DrivingRouteImpl.getNativePtr(route)));
+        result);
   }
 
   void selectRoute(navigation_automotive_layer_route_view.RouteView? route) {
@@ -248,11 +263,14 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_route_view.RouteViewImpl.getNativePtr(
             route));
+    exception.checkCallResult();
   }
 
   navigation_automotive_layer_route_view.RouteView? selectedRoute() {
+    final result = _NavigationLayer_selectedRoute(ptr);
+    exception.checkCallResult();
     return navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
-        _NavigationLayer_selectedRoute(ptr));
+        result);
   }
 
   void addRouteViewListener(
@@ -262,6 +280,7 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_route_view.RouteViewListenerImpl
             .getNativePtr(routeViewListener));
+    exception.checkCallResult();
   }
 
   void removeRouteViewListener(
@@ -271,14 +290,17 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_route_view.RouteViewListenerImpl
             .getNativePtr(routeViewListener));
+    exception.checkCallResult();
   }
 
   void selectRequestPoint(core.int requestPointIndex) {
     _NavigationLayer_selectRequestPoint(ptr, requestPointIndex);
+    exception.checkCallResult();
   }
 
   void deselectRequestPoint() {
     _NavigationLayer_deselectRequestPoint(ptr);
+    exception.checkCallResult();
   }
 
   void addRequestPointListener(
@@ -288,6 +310,7 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_request_point_listener
             .RequestPointListenerImpl.getNativePtr(requestPointListener));
+    exception.checkCallResult();
   }
 
   void removeRequestPointListener(
@@ -297,6 +320,7 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_request_point_listener
             .RequestPointListenerImpl.getNativePtr(requestPointListener));
+    exception.checkCallResult();
   }
 
   void addBalloonViewListener(
@@ -306,6 +330,7 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_balloon_view_listener
             .BalloonViewListenerImpl.getNativePtr(balloonListener));
+    exception.checkCallResult();
   }
 
   void removeBalloonViewListener(
@@ -315,36 +340,45 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
         ptr,
         navigation_automotive_layer_balloon_view_listener
             .BalloonViewListenerImpl.getNativePtr(balloonListener));
+    exception.checkCallResult();
   }
 
   void addListener(NavigationLayerListener navigationLayerListener) {
     _NavigationLayer_addListener(
         ptr, NavigationLayerListenerImpl.getNativePtr(navigationLayerListener));
+    exception.checkCallResult();
   }
 
   void removeListener(NavigationLayerListener navigationLayerListener) {
     _NavigationLayer_removeListener(
         ptr, NavigationLayerListenerImpl.getNativePtr(navigationLayerListener));
+    exception.checkCallResult();
   }
 
   void removeFromMap() {
     _NavigationLayer_removeFromMap(ptr);
+    exception.checkCallResult();
   }
 
   void setShowBalloonsGeometry(core.bool enabled) {
     _NavigationLayer_setShowBalloonsGeometry(ptr, enabled);
+    exception.checkCallResult();
   }
 
   void refreshStyle() {
     _NavigationLayer_refreshStyle(ptr);
+    exception.checkCallResult();
   }
 
   core.bool is2DMode() {
-    return _NavigationLayer_is2DMode(ptr);
+    final result = _NavigationLayer_is2DMode(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   void set2DMode(core.bool enabled) {
     _NavigationLayer_set2DMode(ptr, enabled);
+    exception.checkCallResult();
   }
 }
 
@@ -598,15 +632,14 @@ NavigationLayer _createNavigationLayer(
     navigation_automotive_layer_styling_style_provider.NavigationStyleProvider
         styleProvider,
     navigation_automotive_navigation.Navigation navigation) {
-  return NavigationLayerImpl.fromNativePtr(
-      _NavigationLayerFactory_createNavigationLayer(
-          mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
-          mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
-              .getNativePtr(roadEventsLayer),
-          navigation_automotive_layer_styling_style_provider
-              .NavigationStyleProviderImpl.getNativePtr(styleProvider),
-          navigation_automotive_navigation.NavigationImpl.getNativePtr(
-              navigation)));
+  final result = _NavigationLayerFactory_createNavigationLayer(
+      mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
+      mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
+          .getNativePtr(roadEventsLayer),
+      navigation_automotive_layer_styling_style_provider
+          .NavigationStyleProviderImpl.getNativePtr(styleProvider),
+      navigation_automotive_navigation.NavigationImpl.getNativePtr(navigation));
+  return NavigationLayerImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function(

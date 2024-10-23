@@ -70,6 +70,12 @@ final class DrivingFlags {
   /// Route has conditionally-toll-free toll posts
   final core.bool hasNonTransactionalTolls;
 
+  /// Route has tunnels on it.
+  final core.bool hasTunnels;
+
+  /// Route has highways on it.
+  final core.bool hasHighways;
+
   const DrivingFlags({
     required this.blocked,
     required this.hasFerries,
@@ -89,6 +95,8 @@ final class DrivingFlags {
     required this.hasCheckpoints,
     required this.scheduledDeparture,
     required this.hasNonTransactionalTolls,
+    required this.hasTunnels,
+    required this.hasHighways,
   });
 
   @core.override
@@ -110,7 +118,9 @@ final class DrivingFlags {
         hasRailwayCrossing,
         hasCheckpoints,
         scheduledDeparture,
-        hasNonTransactionalTolls
+        hasNonTransactionalTolls,
+        hasTunnels,
+        hasHighways
       ]);
 
   @core.override
@@ -135,11 +145,13 @@ final class DrivingFlags {
         hasRailwayCrossing == other.hasRailwayCrossing &&
         hasCheckpoints == other.hasCheckpoints &&
         scheduledDeparture == other.scheduledDeparture &&
-        hasNonTransactionalTolls == other.hasNonTransactionalTolls;
+        hasNonTransactionalTolls == other.hasNonTransactionalTolls &&
+        hasTunnels == other.hasTunnels &&
+        hasHighways == other.hasHighways;
   }
 
   @core.override
   core.String toString() {
-    return "DrivingFlags(blocked: $blocked, hasFerries: $hasFerries, hasTolls: $hasTolls, requiresAccessPass: $requiresAccessPass, forParking: $forParking, futureBlocked: $futureBlocked, deadJam: $deadJam, builtOffline: $builtOffline, predicted: $predicted, hasRuggedRoads: $hasRuggedRoads, hasFordCrossing: $hasFordCrossing, hasVehicleRestrictions: $hasVehicleRestrictions, hasUnpavedRoads: $hasUnpavedRoads, hasInPoorConditionRoads: $hasInPoorConditionRoads, hasRailwayCrossing: $hasRailwayCrossing, hasCheckpoints: $hasCheckpoints, scheduledDeparture: $scheduledDeparture, hasNonTransactionalTolls: $hasNonTransactionalTolls)";
+    return "DrivingFlags(blocked: $blocked, hasFerries: $hasFerries, hasTolls: $hasTolls, requiresAccessPass: $requiresAccessPass, forParking: $forParking, futureBlocked: $futureBlocked, deadJam: $deadJam, builtOffline: $builtOffline, predicted: $predicted, hasRuggedRoads: $hasRuggedRoads, hasFordCrossing: $hasFordCrossing, hasVehicleRestrictions: $hasVehicleRestrictions, hasUnpavedRoads: $hasUnpavedRoads, hasInPoorConditionRoads: $hasInPoorConditionRoads, hasRailwayCrossing: $hasRailwayCrossing, hasCheckpoints: $hasCheckpoints, scheduledDeparture: $scheduledDeparture, hasNonTransactionalTolls: $hasNonTransactionalTolls, hasTunnels: $hasTunnels, hasHighways: $hasHighways)";
   }
 }

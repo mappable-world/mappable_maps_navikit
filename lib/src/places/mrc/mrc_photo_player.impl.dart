@@ -48,24 +48,30 @@ class MrcPhotoPlayerImpl implements MrcPhotoPlayer, ffi.Finalizable {
 
   @core.override
   core.String? get photoId {
-    return to_platform
-        .toPlatformFromPointerString(_MrcPhotoPlayer_get_photoId(ptr));
+    final result = _MrcPhotoPlayer_get_photoId(ptr);
+    exception.checkCallResult();
+    return to_platform.toPlatformFromPointerString(result);
   }
 
   void reset() {
     _MrcPhotoPlayer_reset(ptr);
+    exception.checkCallResult();
   }
 
   void enableMove() {
     _MrcPhotoPlayer_enableMove(ptr);
+    exception.checkCallResult();
   }
 
   void disableMove() {
     _MrcPhotoPlayer_disableMove(ptr);
+    exception.checkCallResult();
   }
 
   core.bool moveEnabled() {
-    return _MrcPhotoPlayer_moveEnabled(ptr);
+    final result = _MrcPhotoPlayer_moveEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 }
 

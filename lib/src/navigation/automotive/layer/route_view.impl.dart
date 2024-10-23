@@ -48,16 +48,18 @@ class RouteViewImpl implements RouteView, ffi.Finalizable {
 
   @core.override
   directions_driving_route.DrivingRoute get route {
-    return directions_driving_route.DrivingRouteImpl.fromNativePtr(
-        _RouteView_get_route(ptr));
+    final result = _RouteView_get_route(ptr);
+    exception.checkCallResult();
+    return directions_driving_route.DrivingRouteImpl.fromNativePtr(result);
   }
 
   @core.override
   core.List<navigation_automotive_layer_balloon_view.BalloonView>
       get balloonViews {
+    final result = _RouteView_get_balloonViews(ptr);
+    exception.checkCallResult();
     return navigation_automotive_layer_balloon_view
-            .BalloonViewContainerExtension
-        .toPlatformVector(_RouteView_get_balloonViews(ptr));
+        .BalloonViewContainerExtension.toPlatformVector(result);
   }
 }
 

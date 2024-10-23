@@ -40,14 +40,16 @@ class NavigationUpcomingManoeuvreImpl
 
   @core.override
   directions_driving_annotation.DrivingAnnotation get annotation {
+    final result = _UpcomingManoeuvre_get_annotation(ptr);
     return directions_driving_annotation.DrivingAnnotationImpl.fromNativePtr(
-        _UpcomingManoeuvre_get_annotation(ptr));
+        result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
+    final result = _UpcomingManoeuvre_get_position(ptr);
     return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _UpcomingManoeuvre_get_position(ptr));
+        result);
   }
 }
 
@@ -123,27 +125,29 @@ class NavigationUpcomingRoadEventImpl
 
   @core.override
   directions_driving_route.DrivingEvent get event {
-    return directions_driving_route.DrivingEventImpl.fromNativePtr(
-        _UpcomingRoadEvent_get_event(ptr));
+    final result = _UpcomingRoadEvent_get_event(ptr);
+    return directions_driving_route.DrivingEventImpl.fromNativePtr(result);
   }
 
   @core.override
   navigation_automotive_speed_limit_status.SpeedLimitStatus?
       get speedLimitStatus {
+    final result = _UpcomingRoadEvent_get_speedLimitStatus(ptr);
     return navigation_automotive_speed_limit_status.SpeedLimitStatusImpl
-        .fromPointer(_UpcomingRoadEvent_get_speedLimitStatus(ptr));
+        .fromPointer(result);
   }
 
   @core.override
   core.double? get effectiveSpeedLimit {
-    return to_platform.toPlatformFromPointerDouble(
-        _UpcomingRoadEvent_get_effectiveSpeedLimit(ptr));
+    final result = _UpcomingRoadEvent_get_effectiveSpeedLimit(ptr);
+    return to_platform.toPlatformFromPointerDouble(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
+    final result = _UpcomingRoadEvent_get_position(ptr);
     return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _UpcomingRoadEvent_get_position(ptr));
+        result);
   }
 }
 
@@ -239,14 +243,15 @@ class NavigationUpcomingLaneSignImpl
 
   @core.override
   directions_driving_lane.DrivingLaneSign get laneSign {
-    return directions_driving_lane.DrivingLaneSignImpl.fromNativePtr(
-        _UpcomingLaneSign_get_laneSign(ptr));
+    final result = _UpcomingLaneSign_get_laneSign(ptr);
+    return directions_driving_lane.DrivingLaneSignImpl.fromNativePtr(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
+    final result = _UpcomingLaneSign_get_position(ptr);
     return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _UpcomingLaneSign_get_position(ptr));
+        result);
   }
 }
 
@@ -323,14 +328,16 @@ class NavigationUpcomingDirectionSignImpl
 
   @core.override
   directions_driving_direction_signs.DrivingDirectionSign get directionSign {
+    final result = _UpcomingDirectionSign_get_directionSign(ptr);
     return directions_driving_direction_signs.DrivingDirectionSignImpl
-        .fromNativePtr(_UpcomingDirectionSign_get_directionSign(ptr));
+        .fromNativePtr(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
+    final result = _UpcomingDirectionSign_get_position(ptr);
     return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _UpcomingDirectionSign_get_position(ptr));
+        result);
   }
 }
 
@@ -567,36 +574,46 @@ class NavigationWindshieldImpl
 
   @core.override
   core.List<NavigationUpcomingManoeuvre> get manoeuvres {
+    final result = _Windshield_get_manoeuvres(ptr);
+    exception.checkCallResult();
     return NavigationUpcomingManoeuvreContainerExtension.toPlatformVector(
-        _Windshield_get_manoeuvres(ptr));
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingRoadEvent> get roadEvents {
+    final result = _Windshield_get_roadEvents(ptr);
+    exception.checkCallResult();
     return NavigationUpcomingRoadEventContainerExtension.toPlatformVector(
-        _Windshield_get_roadEvents(ptr));
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingLaneSign> get laneSigns {
+    final result = _Windshield_get_laneSigns(ptr);
+    exception.checkCallResult();
     return NavigationUpcomingLaneSignContainerExtension.toPlatformVector(
-        _Windshield_get_laneSigns(ptr));
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingDirectionSign> get directionSigns {
+    final result = _Windshield_get_directionSigns(ptr);
+    exception.checkCallResult();
     return NavigationUpcomingDirectionSignContainerExtension.toPlatformVector(
-        _Windshield_get_directionSigns(ptr));
+        result);
   }
 
   void addListener(NavigationWindshieldListener windshieldListener) {
     _Windshield_addListener(
         ptr, NavigationWindshieldListenerImpl.getNativePtr(windshieldListener));
+    exception.checkCallResult();
   }
 
   void removeListener(NavigationWindshieldListener windshieldListener) {
     _Windshield_removeListener(
         ptr, NavigationWindshieldListenerImpl.getNativePtr(windshieldListener));
+    exception.checkCallResult();
   }
 }
 

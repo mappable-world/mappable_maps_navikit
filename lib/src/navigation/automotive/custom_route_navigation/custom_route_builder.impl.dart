@@ -104,8 +104,7 @@ class NavigationCustomRouteBuilderImpl
     directions_driving_session.DrivingSessionRouteListener routeListener, {
     core.double? initialAzimuth,
   }) {
-    return directions_driving_session.DrivingSessionImpl.fromNativePtr(
-        _CustomRouteBuilder_requestRoute(
+    final result = _CustomRouteBuilder_requestRoute(
       ptr,
       mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline),
       mapkit_geometry_point.PointImpl.toNative(initialPoint),
@@ -113,7 +112,8 @@ class NavigationCustomRouteBuilderImpl
       NavigationCustomRouteOptionsImpl.toNative(customRouteOptions),
       directions_driving_session.DrivingSessionRouteListenerImpl.getNativePtr(
           routeListener),
-    ));
+    );
+    return directions_driving_session.DrivingSessionImpl.fromNativePtr(result);
   }
 }
 
@@ -151,8 +151,8 @@ final void Function(
     .asFunction(isLeaf: true);
 
 NavigationCustomRouteBuilder _createCustomRouteBuilder() {
-  return NavigationCustomRouteBuilderImpl.fromNativePtr(
-      _CustomRouteBuilderFactory_createCustomRouteBuilder());
+  final result = _CustomRouteBuilderFactory_createCustomRouteBuilder();
+  return NavigationCustomRouteBuilderImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function()

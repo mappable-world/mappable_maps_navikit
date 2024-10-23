@@ -277,6 +277,36 @@ class InternalDefaultRoutePinsStyleProviderImpl
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
+
+  void provideTollRoadStyle(
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartStyle,
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartEnd, {
+    required core.double scaleFactor,
+    required core.bool isNightMode,
+  }) {
+    _DefaultRoutePinsStyleProvider_provideTollRoadStyle(
+      ptr,
+      scaleFactor,
+      isNightMode,
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
+          tollRoadStartStyle),
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
+          tollRoadStartEnd),
+    );
+  }
+
+  void provideRestrictedEntryStyle(
+    mapkit_styling_placemark_style.PlacemarkStyle style, {
+    required core.double scaleFactor,
+    required core.bool isNightMode,
+  }) {
+    _DefaultRoutePinsStyleProvider_provideRestrictedEntryStyle(
+      ptr,
+      scaleFactor,
+      isNightMode,
+      mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
+    );
+  }
 }
 
 final _InternalDefaultRoutePinsStyleProvider_free = lib.library.lookup<
@@ -348,6 +378,34 @@ final void Function(
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
                     ffi.Pointer<ffi.Void>)>>(
         'mappable_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideSpeedBumpStyle')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.double,
+    core.bool,
+    ffi.Pointer<ffi.Void>,
+    ffi.Pointer<
+        ffi.Void>) _DefaultRoutePinsStyleProvider_provideTollRoadStyle = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+        'mappable_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideTollRoadStyle')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.double,
+    core.bool,
+    ffi.Pointer<
+        ffi
+        .Void>) _DefaultRoutePinsStyleProvider_provideRestrictedEntryStyle = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
+                    ffi.Pointer<ffi.Void>)>>(
+        'mappable_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideRestrictedEntryStyle')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
@@ -597,13 +655,13 @@ class InternalDefaultBalloonImageProviderImpl
     required core.double scaleFactor,
     required core.bool isNightMode,
   }) {
+    final result = _DefaultBalloonImageProvider_geometriesForBalloon(
+        ptr,
+        navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
+        scaleFactor,
+        isNightMode);
     return navigation_balloons_balloon_geometry
-            .BalloonGeometryContainerExtension
-        .toPlatformVector(_DefaultBalloonImageProvider_geometriesForBalloon(
-            ptr,
-            navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
-            scaleFactor,
-            isNightMode));
+        .BalloonGeometryContainerExtension.toPlatformVector(result);
   }
 
   image_wrapper.ImageWrapper createImage(
@@ -612,14 +670,13 @@ class InternalDefaultBalloonImageProviderImpl
     required core.double scaleFactor,
     required core.bool isNightMode,
   }) {
-    return to_platform.toPlatformBitmap(
-        _DefaultBalloonImageProvider_createImage(
-            ptr,
-            navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
-            navigation_balloons_balloon_anchor.BalloonAnchorImpl.toNative(
-                anchor),
-            scaleFactor,
-            isNightMode));
+    final result = _DefaultBalloonImageProvider_createImage(
+        ptr,
+        navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
+        navigation_balloons_balloon_anchor.BalloonAnchorImpl.toNative(anchor),
+        scaleFactor,
+        isNightMode);
+    return to_platform.toPlatformBitmap(result);
   }
 }
 
@@ -670,28 +727,28 @@ final void Function(
     .asFunction(isLeaf: true);
 
 InternalDefaultUserPlacemarkStyleProvider _userPlacemarkStyleProvider() {
-  return InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(
-      _DefaultStyleProvidersFactory_userPlacemarkStyleProvider());
+  final result = _DefaultStyleProvidersFactory_userPlacemarkStyleProvider();
+  return InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(result);
 }
 
 InternalDefaultRequestPointStyleProvider _requestPointStyleProvider() {
-  return InternalDefaultRequestPointStyleProviderImpl.fromNativePtr(
-      _DefaultStyleProvidersFactory_requestPointStyleProvider());
+  final result = _DefaultStyleProvidersFactory_requestPointStyleProvider();
+  return InternalDefaultRequestPointStyleProviderImpl.fromNativePtr(result);
 }
 
 InternalDefaultRoutePinsStyleProvider _routePinsStyleProvider() {
-  return InternalDefaultRoutePinsStyleProviderImpl.fromNativePtr(
-      _DefaultStyleProvidersFactory_routePinsStyleProvider());
+  final result = _DefaultStyleProvidersFactory_routePinsStyleProvider();
+  return InternalDefaultRoutePinsStyleProviderImpl.fromNativePtr(result);
 }
 
 InternalDefaultRouteViewStyleProvider _routeViewStyleProvider() {
-  return InternalDefaultRouteViewStyleProviderImpl.fromNativePtr(
-      _DefaultStyleProvidersFactory_routeViewStyleProvider());
+  final result = _DefaultStyleProvidersFactory_routeViewStyleProvider();
+  return InternalDefaultRouteViewStyleProviderImpl.fromNativePtr(result);
 }
 
 InternalDefaultBalloonImageProvider _balloonImageProvider() {
-  return InternalDefaultBalloonImageProviderImpl.fromNativePtr(
-      _DefaultStyleProvidersFactory_balloonImageProvider());
+  final result = _DefaultStyleProvidersFactory_balloonImageProvider();
+  return InternalDefaultBalloonImageProviderImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function()

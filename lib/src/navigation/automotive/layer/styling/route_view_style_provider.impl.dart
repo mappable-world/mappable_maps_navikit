@@ -53,10 +53,12 @@ class NavigationJamStyleImpl implements NavigationJamStyle, ffi.Finalizable {
         ptr,
         mapkit_navigation_jam_style.JamTypeColorContainerExtension
             .toNativeVector(colors));
+    exception.checkCallResult();
   }
 
   void setGradientLength(core.double gradientLength) {
     _JamStyle_setGradientLength(ptr, gradientLength);
+    exception.checkCallResult();
   }
 }
 
@@ -149,42 +151,62 @@ class NavigationRouteStyleImpl
 
   void setShowRoute(core.bool showRoute) {
     _RouteStyle_setShowRoute(ptr, showRoute);
+    exception.checkCallResult();
   }
 
   void setShowJams(core.bool showJams) {
     _RouteStyle_setShowJams(ptr, showJams);
+    exception.checkCallResult();
   }
 
   void setShowBalloons(core.bool showBalloons) {
     _RouteStyle_setShowBalloons(ptr, showBalloons);
+    exception.checkCallResult();
   }
 
   void setShowRoadEvents(core.bool showRoadEvents) {
     _RouteStyle_setShowRoadEvents(ptr, showRoadEvents);
+    exception.checkCallResult();
   }
 
   void setShowTrafficLights(core.bool showTrafficLights) {
     _RouteStyle_setShowTrafficLights(ptr, showTrafficLights);
+    exception.checkCallResult();
   }
 
   void setShowCheckpoints(core.bool showCheckpoints) {
     _RouteStyle_setShowCheckpoints(ptr, showCheckpoints);
+    exception.checkCallResult();
   }
 
   void setShowRailwayCrossings(core.bool showRailwayCrossings) {
     _RouteStyle_setShowRailwayCrossings(ptr, showRailwayCrossings);
+    exception.checkCallResult();
   }
 
   void setShowSpeedBumps(core.bool showSpeedBumps) {
     _RouteStyle_setShowSpeedBumps(ptr, showSpeedBumps);
+    exception.checkCallResult();
   }
 
   void setShowRoadsInPoorCondition(core.bool showRoadsInPoorCondition) {
     _RouteStyle_setShowRoadsInPoorCondition(ptr, showRoadsInPoorCondition);
+    exception.checkCallResult();
   }
 
   void setShowManoeuvres(core.bool showManoeuvres) {
     _RouteStyle_setShowManoeuvres(ptr, showManoeuvres);
+    exception.checkCallResult();
+  }
+
+  void setShowTollRoads(core.bool showTollRoads) {
+    _RouteStyle_setShowTollRoads(ptr, showTollRoads);
+    exception.checkCallResult();
+  }
+
+  void setShowRestrictedEntries(core.bool showRestrictedEntries) {
+    _RouteStyle_setShowRestrictedEntries(ptr, showRestrictedEntries);
+    exception.checkCallResult();
   }
 }
 
@@ -287,6 +309,24 @@ final void Function(
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
         'mappable_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowManoeuvres')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .bool) _RouteStyle_setShowTollRoads = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
+        'mappable_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowTollRoads')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .bool) _RouteStyle_setShowRestrictedEntries = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
+        'mappable_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowRestrictedEntries')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,

@@ -4,6 +4,8 @@ import 'package:mappable_maps_navikit/src/bindings/common/library.dart' as lib;
 import 'dart:core' as core;
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
+import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
+    show runWithBlockUi;
 import 'package:mappable_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
@@ -34,6 +36,7 @@ abstract class NavigationJamStyle implements ffi.Finalizable {
 
   void setGradientLength(core.double gradientLength);
 
+  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -73,6 +76,13 @@ abstract class NavigationRouteStyle implements ffi.Finalizable {
   /// Show manoeuvre arrows along the route. Disabled by default.
   void setShowManoeuvres(core.bool showManoeuvres);
 
+  /// Show toll roads along the route. Disabled by default.
+  void setShowTollRoads(core.bool showTollRoads);
+
+  /// Show restricted entries along the route. Disabled by default.
+  void setShowRestrictedEntries(core.bool showRestrictedEntries);
+
+  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 

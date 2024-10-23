@@ -4,6 +4,10 @@ import 'package:mappable_maps_navikit/src/bindings/common/library.dart' as lib;
 import 'dart:core' as core;
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
+import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
+    show runWithBlockUi;
+import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
+    as exception;
 import 'package:mappable_maps_navikit/src/bindings/common/native_types.dart'
     as native_types;
 import 'package:mappable_maps_navikit/src/bindings/common/string_map.dart'
@@ -28,6 +32,8 @@ import 'package:mappable_maps_navikit/src/mapkit/location/location_simulator.dar
     as mapkit_location_location_simulator;
 import 'package:mappable_maps_navikit/src/mapkit/map/map_window.dart'
     as mapkit_map_map_window;
+import 'package:mappable_maps_navikit/src/mapkit/offline_cache/offline_cache_manager.dart'
+    as mapkit_offline_cache_offline_cache_manager;
 import 'package:mappable_maps_navikit/src/mapkit/road_events/road_events_manager.dart'
     as mapkit_road_events_road_events_manager;
 import 'package:mappable_maps_navikit/src/mapkit/road_events_layer/road_events_layer.dart'
@@ -53,6 +59,12 @@ part 'mapkit.impl.dart';
 /// references. You need to have strong references to them somewhere in
 /// the client code.
 abstract class MapKit implements ffi.Finalizable {
+  /// Returns a manager that handles offline maps, search index and road
+  /// graph.
+  /// @attention This feature is not available in the free MapKit version.
+  mapkit_offline_cache_offline_cache_manager.OfflineCacheManager
+      get offlineCacheManager;
+
   /// Returns a manager that handles disk size and IO errors.
   mapkit_storage_storage_manager.StorageManager get storageManager;
 
@@ -157,5 +169,6 @@ abstract class MapKit implements ffi.Finalizable {
   mapkit_user_location_user_location.UserLocationLayer createUserLocationLayer(
       mapkit_map_map_window.MapWindow mapWindow);
 
+  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
