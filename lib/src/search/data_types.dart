@@ -10,6 +10,8 @@ import 'package:mappable_maps_navikit/src/bindings/common/vector.dart'
     as vector;
 import 'package:mappable_maps_navikit/src/search/business_photo_object_metadata.dart'
     as search_business_photo_object_metadata;
+import 'package:mappable_maps_navikit/src/search/business_rating_1x_object_metadata.dart'
+    as search_business_rating_1x_object_metadata;
 import 'package:mappable_maps_navikit/src/search/panoramas_object_metadata.dart'
     as search_panoramas_object_metadata;
 
@@ -74,6 +76,10 @@ final class SearchSnippet {
   /// See
   /// [search_business_photo_object_metadata.SearchBusinessPhotoObjectMetadata].
   static const Photos = SearchSnippet(1);
+
+  /// Information about ratings (can be requested for a business). See
+  /// [search_business_rating_1x_object_metadata.SearchBusinessRating1xObjectMetadata].
+  static const BusinessRating1x = SearchSnippet(1 << 1);
 
   /// Nearest panoramas to this point. See
   /// [search_panoramas_object_metadata.SearchPanoramasObjectMetadata].

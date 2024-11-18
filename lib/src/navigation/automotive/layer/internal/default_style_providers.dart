@@ -24,6 +24,10 @@ import 'package:mappable_maps_navikit/src/mapkit/styling/polyline_style.dart'
     as mapkit_styling_polyline_style;
 import 'package:mappable_maps_navikit/src/navigation/automotive/layer/balloon.dart'
     as navigation_automotive_layer_balloon;
+import 'package:mappable_maps_navikit/src/navigation/automotive/layer/navigation_layer_mode.dart'
+    as navigation_automotive_layer_navigation_layer_mode;
+import 'package:mappable_maps_navikit/src/navigation/automotive/layer/styling/highlight_style_provider.dart'
+    as navigation_automotive_layer_styling_highlight_style_provider;
 import 'package:mappable_maps_navikit/src/navigation/automotive/layer/styling/route_view_style_provider.dart'
     as navigation_automotive_layer_styling_route_view_style_provider;
 import 'package:mappable_maps_navikit/src/navigation/balloons/balloon_anchor.dart'
@@ -38,6 +42,8 @@ part 'default_style_providers.impl.dart';
 abstract class InternalDefaultUserPlacemarkStyleProvider
     implements ffi.Finalizable {
   void provideStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -48,6 +54,8 @@ abstract class InternalDefaultRequestPointStyleProvider
     implements ffi.Finalizable {
   void provideStyle(
     mapkit_request_point.RequestPointType requestPointType,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.int requestPointIndex,
     required core.int requestPointsNumber,
@@ -60,24 +68,32 @@ abstract class InternalDefaultRequestPointStyleProvider
 abstract class InternalDefaultRoutePinsStyleProvider
     implements ffi.Finalizable {
   void provideTrafficLightStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
   });
 
   void provideCheckpointStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
   });
 
   void provideRailwayCrossingStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
   });
 
   void provideRoadInPoorConditionStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle roadInPoorConditionStartStyle,
     mapkit_styling_placemark_style.PlacemarkStyle roadInPoorConditionEndStyle, {
     required core.double scaleFactor,
@@ -85,12 +101,16 @@ abstract class InternalDefaultRoutePinsStyleProvider
   });
 
   void provideSpeedBumpStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
   });
 
   void provideTollRoadStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartStyle,
     mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartEnd, {
     required core.double scaleFactor,
@@ -98,6 +118,8 @@ abstract class InternalDefaultRoutePinsStyleProvider
   });
 
   void provideRestrictedEntryStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -108,6 +130,8 @@ abstract class InternalDefaultRouteViewStyleProvider
     implements ffi.Finalizable {
   void provideJamStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     navigation_automotive_layer_styling_route_view_style_provider
         .NavigationJamStyle
         jamStyle, {
@@ -117,6 +141,8 @@ abstract class InternalDefaultRouteViewStyleProvider
 
   void providePolylineStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_polyline_style.PolylineStyle polylineStyle, {
     required core.bool isSelected,
     required core.bool isNightMode,
@@ -124,6 +150,8 @@ abstract class InternalDefaultRouteViewStyleProvider
 
   void provideManoeuvreStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_arrow_style.ArrowStyle arrowStyle, {
     required core.bool isSelected,
     required core.bool isNightMode,
@@ -131,6 +159,8 @@ abstract class InternalDefaultRouteViewStyleProvider
 
   void provideRouteStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     navigation_automotive_layer_styling_route_view_style_provider
         .NavigationRouteStyle
         routeStyle, {
@@ -152,6 +182,16 @@ abstract class InternalDefaultBalloonImageProvider implements ffi.Finalizable {
     navigation_automotive_layer_balloon.Balloon balloon,
     navigation_balloons_balloon_anchor.BalloonAnchor anchor, {
     required core.double scaleFactor,
+    required core.bool isNightMode,
+  });
+}
+
+abstract class InternalDefaultHighlightStyleProvider
+    implements ffi.Finalizable {
+  navigation_automotive_layer_styling_highlight_style_provider
+      .SpeedControlHighlightStyle? provideSpeedControlStyle(
+    navigation_automotive_layer_styling_highlight_style_provider.HighlightMode
+        highlightMode, {
     required core.bool isNightMode,
   });
 }
@@ -178,5 +218,9 @@ class InternalDefaultStyleProvidersFactory {
 
   static InternalDefaultBalloonImageProvider balloonImageProvider() {
     return _balloonImageProvider();
+  }
+
+  static InternalDefaultHighlightStyleProvider highlightStyleProvider() {
+    return _highlightStyleProvider();
   }
 }

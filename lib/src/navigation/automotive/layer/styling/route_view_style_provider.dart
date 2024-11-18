@@ -24,6 +24,8 @@ import 'package:mappable_maps_navikit/src/mapkit/styling/arrow_style.dart'
     as mapkit_styling_arrow_style;
 import 'package:mappable_maps_navikit/src/mapkit/styling/polyline_style.dart'
     as mapkit_styling_polyline_style;
+import 'package:mappable_maps_navikit/src/navigation/automotive/layer/navigation_layer_mode.dart'
+    as navigation_automotive_layer_navigation_layer_mode;
 import 'package:meta/meta.dart';
 
 part 'route_view_style_provider.containers.dart';
@@ -82,6 +84,14 @@ abstract class NavigationRouteStyle implements ffi.Finalizable {
   /// Show restricted entries along the route. Disabled by default.
   void setShowRestrictedEntries(core.bool showRestrictedEntries);
 
+  /// Set the minimum zoom value, where transparency gets applied to the
+  /// route in certain places, meaning it gets drawn as if it goes under
+  /// brigdes, in tunnels, etc. This only works when the hd mode is enabled
+  /// and the map is in driving mode.
+  ///
+  /// Default value is 17.
+  void setMinZoomForTransparentRoutes(core.double zoom);
+
   /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
@@ -91,6 +101,8 @@ abstract class NavigationRouteViewStyleProvider {
     directions_driving_flags.DrivingFlags flags,
     core.bool isSelected,
     core.bool isNightMode,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     NavigationJamStyle jamStyle,
   );
 
@@ -98,6 +110,8 @@ abstract class NavigationRouteViewStyleProvider {
     directions_driving_flags.DrivingFlags flags,
     core.bool isSelected,
     core.bool isNightMode,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_polyline_style.PolylineStyle polylineStyle,
   );
 
@@ -105,6 +119,8 @@ abstract class NavigationRouteViewStyleProvider {
     directions_driving_flags.DrivingFlags flags,
     core.bool isSelected,
     core.bool isNightMode,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_arrow_style.ArrowStyle arrowStyle,
   );
 
@@ -112,6 +128,8 @@ abstract class NavigationRouteViewStyleProvider {
     directions_driving_flags.DrivingFlags flags,
     core.bool isSelected,
     core.bool isNightMode,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     NavigationRouteStyle routeStyle,
   );
 }
