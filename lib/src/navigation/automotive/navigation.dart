@@ -54,6 +54,8 @@ abstract class NavigationListener {
 
   void onUriResolvingRequested(core.String uri);
 
+  void onMatchRouteResolvingRequested();
+
   /// Calls when routes, alternatives, or URI request succeeds After
   /// alternatives request Navigation.routes() will have current route and
   /// fastest alternative for the request moment along with received
@@ -123,6 +125,9 @@ abstract class Navigation implements ffi.Finalizable {
   /// pending routing request, it will be canceled.
   void resolveUri(core.String uri);
 
+  /// Building a route based on a custom route geometry.
+  void matchRoute(mapkit_geometry_geometry.Polyline polyline);
+
   /// Cancel active routing request.
   void cancelRequest();
 
@@ -150,11 +155,18 @@ abstract class Navigation implements ffi.Finalizable {
 
   /// Stop tracking user position, later it could be resumed without losing
   /// current route. Useful when user don't want guidance in background.
+  ///
+  /// The method is idempotent.
+  ///
+  /// In the suspended state, `startGuidance` can be called, but in fact
+  /// there will be no guidance until `resume` is called.
   void suspend();
 
   /// Resumes suspended guidance. Guide will continue to guide the previous
   /// route or rebuild it. Useful when user don't want guidance in
   /// background.
+  ///
+  /// The method is idempotent.
   void resume();
 }
 

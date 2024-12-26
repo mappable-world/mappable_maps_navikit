@@ -344,6 +344,19 @@ class GuidanceImpl implements Guidance, ffi.Finalizable {
   }
 
   @core.override
+  core.bool get enableReroutes {
+    final result = _Guidance_get_enableReroutes(ptr);
+    exception.checkCallResult();
+    return result;
+  }
+
+  @core.override
+  set enableReroutes(core.bool val) {
+    _Guidance_set_enableReroutes(ptr, val);
+    exception.checkCallResult();
+  }
+
+  @core.override
   navigation_automotive_windshield.NavigationWindshield get windshield {
     final result = _Guidance_get_windshield(ptr);
     exception.checkCallResult();
@@ -491,6 +504,22 @@ final void Function(
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
         'mappable_flutter_navigation_automotive_Guidance_set_enableAlternatives')
+    .asFunction();
+
+final core.bool Function(
+    ffi
+        .Pointer<ffi.Void>) _Guidance_get_enableReroutes = lib.library
+    .lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
+        'mappable_flutter_navigation_automotive_Guidance_get_enableReroutes')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .bool) _Guidance_set_enableReroutes = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
+        'mappable_flutter_navigation_automotive_Guidance_set_enableReroutes')
     .asFunction();
 
 final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)

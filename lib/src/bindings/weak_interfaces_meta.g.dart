@@ -89,6 +89,8 @@ import 'package:mappable_maps_navikit/src/places/panorama/panorama_layer.dart'
 import 'package:mappable_maps_navikit/src/places/panorama/player.dart'
     as places;
 import 'package:mappable_maps_navikit/src/places/places.dart' as places;
+import 'package:mappable_maps_navikit/src/recording/recording.dart'
+    as recording;
 import 'package:mappable_maps_navikit/src/runtime/error.dart' as runtime;
 import 'package:mappable_maps_navikit/src/runtime/i18n/i18n_manager.dart'
     as runtime;
@@ -194,6 +196,7 @@ const weakInterfacesMeta = {
       places.PanoramaNotFoundErrorImpl.fromNativePtrImpl,
   'places.panorama.PanoramaLayer': places.PanoramaLayerImpl.fromNativePtrImpl,
   'places.panorama.Player': places.PanoramaPlayerImpl.fromNativePtrImpl,
+  'recording.ReportCollector': recording.ReportCollectorImpl.fromNativePtrImpl,
   'runtime.DiskCorruptError': runtime.DiskCorruptErrorImpl.fromNativePtrImpl,
   'runtime.DiskFullError': runtime.DiskFullErrorImpl.fromNativePtrImpl,
   'runtime.DiskWriteAccessError':

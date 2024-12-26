@@ -40,9 +40,14 @@ enum RequestPointType {
 /// on. If such context is provided then a client will get routes to
 /// those additional points.
 abstract final class RequestPoint implements ffi.Finalizable {
-  factory RequestPoint(mapkit_geometry_point.Point point, RequestPointType type,
-          core.String? pointContext, core.String? drivingArrivalPointId) =>
-      RequestPointImpl(point, type, pointContext, drivingArrivalPointId);
+  factory RequestPoint(
+          mapkit_geometry_point.Point point,
+          RequestPointType type,
+          core.String? pointContext,
+          core.String? drivingArrivalPointId,
+          core.String? indoorLevelId) =>
+      RequestPointImpl(
+          point, type, pointContext, drivingArrivalPointId, indoorLevelId);
 
   /// The request point.
   mapkit_geometry_point.Point get point;
@@ -60,9 +65,13 @@ abstract final class RequestPoint implements ffi.Finalizable {
   ///
   core.String? get drivingArrivalPointId;
 
+  /// Indoor level (floor) id
+  ///
+  core.String? get indoorLevelId;
+
   @core.override
-  core.int get hashCode =>
-      core.Object.hashAll([point, type, pointContext, drivingArrivalPointId]);
+  core.int get hashCode => core.Object.hashAll(
+      [point, type, pointContext, drivingArrivalPointId, indoorLevelId]);
 
   @core.override
   core.bool operator ==(covariant RequestPoint other) {
@@ -72,11 +81,12 @@ abstract final class RequestPoint implements ffi.Finalizable {
     return point == other.point &&
         type == other.type &&
         pointContext == other.pointContext &&
-        drivingArrivalPointId == other.drivingArrivalPointId;
+        drivingArrivalPointId == other.drivingArrivalPointId &&
+        indoorLevelId == other.indoorLevelId;
   }
 
   @core.override
   core.String toString() {
-    return "RequestPoint(point: $point, type: $type, pointContext: $pointContext, drivingArrivalPointId: $drivingArrivalPointId)";
+    return "RequestPoint(point: $point, type: $type, pointContext: $pointContext, drivingArrivalPointId: $drivingArrivalPointId, indoorLevelId: $indoorLevelId)";
   }
 }

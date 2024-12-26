@@ -27,9 +27,11 @@ abstract final class MasstransitWayPoint implements ffi.Finalizable {
           mapkit_geometry_point.Point position,
           mapkit_geometry_point.Point? selectedArrivalPoint,
           mapkit_geometry_point.Point? selectedDeparturePoint,
-          core.String? context) =>
-      MasstransitWayPointImpl(
-          position, selectedArrivalPoint, selectedDeparturePoint, context);
+          core.String? context,
+          core.String? levelId,
+          core.String? levelName) =>
+      MasstransitWayPointImpl(position, selectedArrivalPoint,
+          selectedDeparturePoint, context, levelId, levelName);
 
   /// Coordinates of the original waypoint from the request.
   mapkit_geometry_point.Point get position;
@@ -48,9 +50,23 @@ abstract final class MasstransitWayPoint implements ffi.Finalizable {
   ///
   core.String? get context;
 
+  /// Indoor level (floor) id
+  ///
+  core.String? get levelId;
+
+  /// Indoor level (floor) name
+  ///
+  core.String? get levelName;
+
   @core.override
-  core.int get hashCode => core.Object.hashAll(
-      [position, selectedArrivalPoint, selectedDeparturePoint, context]);
+  core.int get hashCode => core.Object.hashAll([
+        position,
+        selectedArrivalPoint,
+        selectedDeparturePoint,
+        context,
+        levelId,
+        levelName
+      ]);
 
   @core.override
   core.bool operator ==(covariant MasstransitWayPoint other) {
@@ -60,11 +76,13 @@ abstract final class MasstransitWayPoint implements ffi.Finalizable {
     return position == other.position &&
         selectedArrivalPoint == other.selectedArrivalPoint &&
         selectedDeparturePoint == other.selectedDeparturePoint &&
-        context == other.context;
+        context == other.context &&
+        levelId == other.levelId &&
+        levelName == other.levelName;
   }
 
   @core.override
   core.String toString() {
-    return "MasstransitWayPoint(position: $position, selectedArrivalPoint: $selectedArrivalPoint, selectedDeparturePoint: $selectedDeparturePoint, context: $context)";
+    return "MasstransitWayPoint(position: $position, selectedArrivalPoint: $selectedArrivalPoint, selectedDeparturePoint: $selectedDeparturePoint, context: $context, levelId: $levelId, levelName: $levelName)";
   }
 }
