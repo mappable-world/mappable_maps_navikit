@@ -37,6 +37,8 @@ abstract final class SearchAddress implements ffi.Finalizable {
       SearchAddressImpl(formattedAddress, additionalInfo, postalCode,
           countryCode, components);
 
+  SearchAddress._();
+
   /// Human-readable address.
   core.String get formattedAddress;
 
@@ -85,6 +87,8 @@ abstract final class SearchAddressComponent implements ffi.Finalizable {
   factory SearchAddressComponent(
           core.String name, core.List<SearchAddressComponentKind> kinds) =>
       SearchAddressComponentImpl(name, kinds);
+
+  SearchAddressComponent._();
 
   /// Component name.
   core.String get name;

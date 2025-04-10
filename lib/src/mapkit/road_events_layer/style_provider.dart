@@ -7,8 +7,6 @@ import 'dart:ui' as ui;
 import 'package:ffi/ffi.dart';
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:mappable_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
@@ -40,6 +38,8 @@ abstract final class RoadEventsLayerTextStyle implements ffi.Finalizable {
   factory RoadEventsLayerTextStyle(
           core.double fontSize, ui.Color color, ui.Color? outlineColor) =>
       RoadEventsLayerTextStyleImpl(fontSize, color, outlineColor);
+
+  RoadEventsLayerTextStyle._();
 
   /// Font size in device-independent pixels.
   core.double get fontSize;
@@ -92,7 +92,6 @@ abstract class RoadEventsLayerRoadEventStyle implements ffi.Finalizable {
   /// Road event icon image.
   void setIconImage(image_provider.ImageProvider image);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -127,7 +126,6 @@ abstract class RoadEventsLayerRoadEventStylingProperties
   core.bool hasSignificanceGreaterOrEqual(
       mapkit_road_events_layer_significance.RoadEventSignificance significance);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 

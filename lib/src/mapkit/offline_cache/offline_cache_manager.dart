@@ -4,8 +4,6 @@ import 'package:mappable_maps_navikit/src/bindings/common/library.dart' as lib;
 import 'dart:core' as core;
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:mappable_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
@@ -182,7 +180,6 @@ abstract class OfflineCacheManager implements ffi.Finalizable {
       mapkit_offline_cache_regions_at_point_listener.RegionsAtPointListener
           callback);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 

@@ -23,6 +23,8 @@ abstract final class BicycleViaPoint implements ffi.Finalizable {
   factory BicycleViaPoint(mapkit_geometry_geometry.PolylinePosition position) =>
       BicycleViaPointImpl(position);
 
+  BicycleViaPoint._();
+
   /// Via point position on the route geometry.
   mapkit_geometry_geometry.PolylinePosition get position;
 
@@ -50,6 +52,8 @@ abstract final class BicycleWayPoint implements ffi.Finalizable {
   factory BicycleWayPoint(mapkit_geometry_point.Point position,
           mapkit_geometry_point.Point? selectedArrivalPoint) =>
       BicycleWayPointImpl(position, selectedArrivalPoint);
+
+  BicycleWayPoint._();
 
   /// Coordinates of the original waypoint from the request.
   mapkit_geometry_point.Point get position;

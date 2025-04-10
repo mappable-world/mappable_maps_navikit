@@ -13,6 +13,7 @@ export 'package:mappable_maps_navikit/src/transport/masstransit/options_export.d
 export 'package:mappable_maps_navikit/src/transport/masstransit/way_point_export.dart';
 export 'package:mappable_maps_navikit/src/transport/masstransit/flags_export.dart';
 export 'package:mappable_maps_navikit/src/transport/masstransit/pedestrian_router_export.dart';
+export 'package:mappable_maps_navikit/src/transport/masstransit/fare_export.dart';
 export 'package:mappable_maps_navikit/src/transport/masstransit/masstransit_router_export.dart';
 export 'package:mappable_maps_navikit/src/transport/masstransit/transit_options_export.dart';
 export 'package:mappable_maps_navikit/src/transport/masstransit/weight_export.dart';

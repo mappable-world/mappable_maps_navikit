@@ -30,6 +30,8 @@ abstract final class SearchBusinessPhotoObjectMetadata
           core.List<SearchBusinessPhotoObjectMetadataPhoto> photos) =>
       SearchBusinessPhotoObjectMetadataImpl(count, photos);
 
+  SearchBusinessPhotoObjectMetadata._();
+
   /// Number of photos for the organisation. (see PhotosManager for
   /// details)
   core.int get count;
@@ -64,6 +66,8 @@ abstract final class SearchBusinessPhotoObjectMetadataPhoto
           core.List<SearchBusinessPhotoObjectMetadataPhotoPhotoLink> links) =>
       SearchBusinessPhotoObjectMetadataPhotoImpl(id, links);
 
+  SearchBusinessPhotoObjectMetadataPhoto._();
+
   /// To get a valid download link use the value of id + /\[size\], where
   /// \[size\] is one of: 1. XXXS 2. XXS 3. XS 4. S 5. M 6. L 7. XL 8. XXL
   /// 9. XXXL 10. orig
@@ -96,6 +100,8 @@ abstract final class SearchBusinessPhotoObjectMetadataPhotoPhotoLink
   factory SearchBusinessPhotoObjectMetadataPhotoPhotoLink(
           core.String? type, core.String uri) =>
       SearchBusinessPhotoObjectMetadataPhotoPhotoLinkImpl(type, uri);
+
+  SearchBusinessPhotoObjectMetadataPhotoPhotoLink._();
 
   /// Optional link type, for example "panorama".
   ///

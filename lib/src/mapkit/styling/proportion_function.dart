@@ -22,6 +22,8 @@ abstract final class StylingConstantFunctionPoints implements ffi.Finalizable {
   factory StylingConstantFunctionPoints(core.double value) =>
       StylingConstantFunctionPointsImpl(value);
 
+  StylingConstantFunctionPoints._();
+
   core.double get value;
 
   @core.override
@@ -47,6 +49,8 @@ abstract final class StylingLinearZoomFunctionPoints
           core.List<math.Point<core.double>> points) =>
       StylingLinearZoomFunctionPointsImpl(points);
 
+  StylingLinearZoomFunctionPoints._();
+
   core.List<math.Point<core.double>> get points;
 
   @core.override
@@ -71,6 +75,8 @@ abstract final class StylingLinearTiltFunctionPoints
   factory StylingLinearTiltFunctionPoints(
           core.List<math.Point<core.double>> points) =>
       StylingLinearTiltFunctionPointsImpl(points);
+
+  StylingLinearTiltFunctionPoints._();
 
   core.List<math.Point<core.double>> get points;
 
@@ -100,6 +106,8 @@ abstract final class StylingBilinearFunctionMatrix implements ffi.Finalizable {
           core.List<core.double> tilts,
           core.List<core.List<core.double>> points) =>
       StylingBilinearFunctionMatrixImpl(zooms, tilts, points);
+
+  StylingBilinearFunctionMatrix._();
 
   core.List<core.double> get zooms;
   core.List<core.double> get tilts;

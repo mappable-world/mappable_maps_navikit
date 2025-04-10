@@ -25,6 +25,8 @@ abstract final class SearchResponse implements ffi.Finalizable {
           core.bool isOffline) =>
       SearchResponseImpl(metadata, collection, isOffline);
 
+  SearchResponse._();
+
   /// Extended response information.
   search_search_metadata.SearchMetadata get metadata;
 

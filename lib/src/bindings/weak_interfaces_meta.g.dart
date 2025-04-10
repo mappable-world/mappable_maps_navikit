@@ -1,3 +1,5 @@
+import 'package:mappable_maps_navikit/src/directions/carparks/carparks_layer.dart'
+    as directions;
 import 'package:mappable_maps_navikit/src/directions/directions.dart'
     as directions;
 import 'package:mappable_maps_navikit/src/directions/driving/driving_router.dart'
@@ -108,6 +110,8 @@ import 'package:mappable_maps_navikit/src/transport/transport.dart'
 
 const weakInterfacesMeta = {
   'directions.Directions': directions.DirectionsImpl.fromNativePtrImpl,
+  'directions.carparks.CarparksLayer':
+      directions.CarparksLayerImpl.fromNativePtrImpl,
   'directions.driving.TooComplexAvoidedZonesError':
       directions.DrivingTooComplexAvoidedZonesErrorImpl.fromNativePtrImpl,
   'mapkit.MapKit': mapkit.MapKitImpl.fromNativePtrImpl,

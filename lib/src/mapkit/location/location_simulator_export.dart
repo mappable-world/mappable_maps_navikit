@@ -2,6 +2,16 @@ export 'package:mappable_maps_navikit/src/mapkit/location/location_simulator.dar
     hide
         LocationSimulatorImpl,
         LocationSimulatorContainerExtension,
+        SimulationSettingsImpl,
+        SimulationSettingsContainerExtension,
+        LocationSettingsImpl,
+        LocationErrorContainerExtension,
+        TimeIntervalImpl,
+        TimeIntervalContainerExtension,
+        SimulationAccuracyContainerExtension,
+        RangeContainerExtension,
+        LocationErrorImpl,
+        RangeImpl,
+        LocationSettingsContainerExtension,
         LocationSimulatorListenerImpl,
-        SimulationAccuracyImpl,
-        SimulationAccuracyContainerExtension;
+        SimulationAccuracyImpl;

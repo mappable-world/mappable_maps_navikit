@@ -32,6 +32,8 @@ abstract final class RoadEvent implements ffi.Finalizable {
           core.bool isInFuture) =>
       RoadEventImpl(id, position, tags, caption, isInFuture);
 
+  RoadEvent._();
+
   /// The road event unique id.
   core.String get id;
 

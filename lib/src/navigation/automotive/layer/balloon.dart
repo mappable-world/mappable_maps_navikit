@@ -67,6 +67,8 @@ abstract final class ManoeuvreBalloon implements ffi.Finalizable {
               directionSign) =>
       ManoeuvreBalloonImpl(manoeuvre, directionSign);
 
+  ManoeuvreBalloon._();
+
   Manoeuvre get manoeuvre;
   directions_driving_direction_signs.DrivingDirectionSign? get directionSign;
 
@@ -94,6 +96,8 @@ abstract final class ManoeuvreWithLaneSignBalloon implements ffi.Finalizable {
           directions_driving_direction_signs.DrivingDirectionSign?
               directionSign) =>
       ManoeuvreWithLaneSignBalloonImpl(manoeuvre, laneSign, directionSign);
+
+  ManoeuvreWithLaneSignBalloon._();
 
   Manoeuvre get manoeuvre;
   directions_driving_lane.DrivingLaneSign get laneSign;
@@ -126,6 +130,8 @@ abstract final class LaneSignBalloon implements ffi.Finalizable {
               directionSign) =>
       LaneSignBalloonImpl(laneSign, directionSign);
 
+  LaneSignBalloon._();
+
   directions_driving_lane.DrivingLaneSign get laneSign;
   directions_driving_direction_signs.DrivingDirectionSign? get directionSign;
 
@@ -152,6 +158,8 @@ abstract final class RouteSummaryBalloon implements ffi.Finalizable {
           core.List<core.String> tags,
           directions_driving_weight.DrivingWeight? relativeWeight) =>
       RouteSummaryBalloonImpl(summary, tags, relativeWeight);
+
+  RouteSummaryBalloon._();
 
   directions_driving_route.DrivingSummary get summary;
   core.List<core.String> get tags;
@@ -185,6 +193,8 @@ abstract final class AlternativeBalloon implements ffi.Finalizable {
   factory AlternativeBalloon(directions_driving_route.DrivingSummary summary,
           directions_driving_weight.DrivingWeight relativeWeight) =>
       AlternativeBalloonImpl(summary, relativeWeight);
+
+  AlternativeBalloon._();
 
   directions_driving_route.DrivingSummary get summary;
 

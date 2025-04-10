@@ -32,6 +32,8 @@ abstract final class VehicleRawData extends mapkit_base_metadata.BaseMetadata
           transport_masstransit_common.MasstransitLine line) =>
       VehicleRawDataImpl(id, threadId, line);
 
+  VehicleRawData._();
+
   /// Id of a vehicle
   core.String get id;
 

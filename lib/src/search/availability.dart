@@ -142,6 +142,8 @@ abstract final class SearchAvailability implements ffi.Finalizable {
           SearchDayGroup days, core.List<SearchTimeRange> timeRanges) =>
       SearchAvailabilityImpl(days, timeRanges);
 
+  SearchAvailability._();
+
   /// Days where time ranges are applicable
   SearchDayGroup get days;
 

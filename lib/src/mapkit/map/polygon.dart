@@ -5,8 +5,6 @@ import 'dart:core' as core;
 import 'dart:ui' as ui;
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
     as exception;
 import 'package:mappable_maps_navikit/src/bindings/common/native_types.dart'
@@ -83,6 +81,5 @@ abstract class PolygonMapObject
   /// Removes pattern.
   void resetPattern();
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

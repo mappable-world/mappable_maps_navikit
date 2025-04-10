@@ -27,6 +27,8 @@ abstract final class SearchState implements ffi.Finalizable {
           core.String? shortText, core.List<core.String> tags) =>
       SearchStateImpl(isOpenNow, text, shortText, tags);
 
+  SearchState._();
+
   /// Is open right now.
   ///
   core.bool? get isOpenNow;
@@ -71,6 +73,8 @@ abstract final class SearchWorkingHours implements ffi.Finalizable {
           core.List<search_availability.SearchAvailability> availabilities,
           SearchState? state) =>
       SearchWorkingHoursImpl(text, availabilities, state);
+
+  SearchWorkingHours._();
 
   /// Human-readable localized open hours description.
   core.String get text;

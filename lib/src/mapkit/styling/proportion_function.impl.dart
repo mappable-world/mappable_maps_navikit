@@ -6,7 +6,7 @@ part of 'proportion_function.dart';
         '(val) => StylingConstantFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingConstantFunctionPoints')
 final class StylingConstantFunctionPointsImpl
-    implements StylingConstantFunctionPoints {
+    extends StylingConstantFunctionPoints {
   StylingConstantFunctionPointsImpl(core.double value)
       : this.fromNativePtr(_StylingConstantFunctionPoints_init(value));
 
@@ -17,7 +17,7 @@ final class StylingConstantFunctionPointsImpl
   static final _finalizer =
       ffi.NativeFinalizer(_StylingConstantFunctionPoints_free.cast());
 
-  StylingConstantFunctionPointsImpl.fromNativePtr(this._ptr) {
+  StylingConstantFunctionPointsImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -74,7 +74,7 @@ final core.double Function(
         '(val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingLinearZoomFunctionPoints')
 final class StylingLinearZoomFunctionPointsImpl
-    implements StylingLinearZoomFunctionPoints {
+    extends StylingLinearZoomFunctionPoints {
   StylingLinearZoomFunctionPointsImpl(core.List<math.Point<core.double>> points)
       : this.fromNativePtr(_StylingLinearZoomFunctionPoints_init(
             to_native.toNativeVectorPoint(points)));
@@ -87,7 +87,7 @@ final class StylingLinearZoomFunctionPointsImpl
   static final _finalizer =
       ffi.NativeFinalizer(_StylingLinearZoomFunctionPoints_free.cast());
 
-  StylingLinearZoomFunctionPointsImpl.fromNativePtr(this._ptr) {
+  StylingLinearZoomFunctionPointsImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -148,7 +148,7 @@ final ffi.Pointer<ffi.Void> Function(
         '(val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingLinearTiltFunctionPoints')
 final class StylingLinearTiltFunctionPointsImpl
-    implements StylingLinearTiltFunctionPoints {
+    extends StylingLinearTiltFunctionPoints {
   StylingLinearTiltFunctionPointsImpl(core.List<math.Point<core.double>> points)
       : this.fromNativePtr(_StylingLinearTiltFunctionPoints_init(
             to_native.toNativeVectorPoint(points)));
@@ -161,7 +161,7 @@ final class StylingLinearTiltFunctionPointsImpl
   static final _finalizer =
       ffi.NativeFinalizer(_StylingLinearTiltFunctionPoints_free.cast());
 
-  StylingLinearTiltFunctionPointsImpl.fromNativePtr(this._ptr) {
+  StylingLinearTiltFunctionPointsImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -222,7 +222,7 @@ final ffi.Pointer<ffi.Void> Function(
         '(val) => StylingBilinearFunctionMatrixImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingBilinearFunctionMatrix')
 final class StylingBilinearFunctionMatrixImpl
-    implements StylingBilinearFunctionMatrix {
+    extends StylingBilinearFunctionMatrix {
   StylingBilinearFunctionMatrixImpl(core.List<core.double> zooms,
       core.List<core.double> tilts, core.List<core.List<core.double>> points)
       : this.fromNativePtr(_StylingBilinearFunctionMatrix_init(
@@ -244,7 +244,7 @@ final class StylingBilinearFunctionMatrixImpl
   static final _finalizer =
       ffi.NativeFinalizer(_StylingBilinearFunctionMatrix_free.cast());
 
-  StylingBilinearFunctionMatrixImpl.fromNativePtr(this._ptr) {
+  StylingBilinearFunctionMatrixImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 

@@ -91,6 +91,8 @@ abstract final class DrivingLane implements ffi.Finalizable {
           DrivingLaneDirection? highlightedDirection) =>
       DrivingLaneImpl(laneKind, directions, highlightedDirection);
 
+  DrivingLane._();
+
   /// The type of lane.
   DrivingLaneKind get laneKind;
 
@@ -126,6 +128,8 @@ abstract final class DrivingLaneSign implements ffi.Finalizable {
   factory DrivingLaneSign(mapkit_geometry_geometry.PolylinePosition position,
           core.bool? annotated, core.List<DrivingLane> lanes) =>
       DrivingLaneSignImpl(position, annotated, lanes);
+
+  DrivingLaneSign._();
 
   /// The position of the sign.
   mapkit_geometry_geometry.PolylinePosition get position;

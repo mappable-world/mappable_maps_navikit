@@ -30,6 +30,8 @@ abstract final class GeoObjectInspectionMetadata
           GeoObjectInspectionMetadataObjectType objectType) =>
       GeoObjectInspectionMetadataImpl(layerId, objectType);
 
+  GeoObjectInspectionMetadata._();
+
   core.String get layerId;
   GeoObjectInspectionMetadataObjectType get objectType;
 

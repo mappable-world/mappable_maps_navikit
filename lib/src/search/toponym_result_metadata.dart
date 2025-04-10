@@ -34,6 +34,8 @@ abstract final class SearchToponymResultMetadata
           mapkit_geometry_point.Point? reversePoint) =>
       SearchToponymResultMetadataImpl(found, responseInfo, reversePoint);
 
+  SearchToponymResultMetadata._();
+
   /// Approximate number of found objects.
   core.int get found;
 

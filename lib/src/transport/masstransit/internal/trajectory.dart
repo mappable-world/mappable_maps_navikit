@@ -26,6 +26,8 @@ abstract final class TrajectorySegmentMetadata
   factory TrajectorySegmentMetadata(core.int time, core.int duration) =>
       TrajectorySegmentMetadataImpl(time, duration);
 
+  TrajectorySegmentMetadata._();
+
   core.int get time;
   core.int get duration;
 

@@ -166,6 +166,8 @@ abstract final class MasstransitBoardingOptions implements ffi.Finalizable {
           core.List<MasstransitBoardingOptionsBoardingArea> area) =>
       MasstransitBoardingOptionsImpl(area);
 
+  MasstransitBoardingOptions._();
+
   /// Vector of recommended areas to board.
   core.List<MasstransitBoardingOptionsBoardingArea> get area;
 
@@ -191,6 +193,8 @@ abstract final class MasstransitBoardingOptionsBoardingArea
     implements ffi.Finalizable {
   factory MasstransitBoardingOptionsBoardingArea(core.String? id) =>
       MasstransitBoardingOptionsBoardingAreaImpl(id);
+
+  MasstransitBoardingOptionsBoardingArea._();
 
   /// Machine-readable non-localisable boarding area identifier.
   ///
@@ -224,6 +228,8 @@ abstract final class MasstransitTransport implements ffi.Finalizable {
           core.List<transport_masstransit_common.MasstransitTransportContour>
               transportContours) =>
       MasstransitTransportImpl(line, transports, transportContours);
+
+  MasstransitTransport._();
 
   /// Mass transit line.
   transport_masstransit_common.MasstransitLine get line;
@@ -270,6 +276,8 @@ abstract final class MasstransitTransportTransportThread
           MasstransitBoardingOptions? boardingOptions) =>
       MasstransitTransportTransportThreadImpl(thread, isRecommended, alerts,
           alternateDepartureStop, boardingOptions);
+
+  MasstransitTransportTransportThread._();
 
   /// Mass transit thread.
   transport_masstransit_common.MasstransitThread get thread;

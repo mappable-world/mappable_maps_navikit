@@ -31,6 +31,8 @@ abstract final class SearchFuelType implements ffi.Finalizable {
   factory SearchFuelType(core.String? name, mapkit_money.TaxiMoney? price) =>
       SearchFuelTypeImpl(name, price);
 
+  SearchFuelType._();
+
   /// Fuel name.
   ///
   core.String? get name;
@@ -64,6 +66,8 @@ abstract final class SearchFuelMetadata
           core.List<SearchFuelType> fuels,
           mapkit_attribution.Attribution? attribution) =>
       SearchFuelMetadataImpl(timestamp, fuels, attribution);
+
+  SearchFuelMetadata._();
 
   /// Snippet update time as UNIX timestamp.
   ///

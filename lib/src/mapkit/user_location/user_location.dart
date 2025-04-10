@@ -6,8 +6,6 @@ import 'dart:math' as math;
 import 'package:ffi/ffi.dart';
 import 'package:mappable_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:mappable_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:mappable_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:mappable_maps_navikit/src/bindings/common/exception.dart'
@@ -52,8 +50,6 @@ abstract class UserLocationView implements ffi.Finalizable {
 
   /// Gets the GPS accuracy circle map object.
   mapkit_map_circle.CircleMapObject get accuracyCircle;
-
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -82,8 +78,6 @@ abstract class UserLocationIconChanged
     implements mapkit_layers_object_event.ObjectEvent, ffi.Finalizable {
   /// Gets the type of user location icon used.
   UserLocationIconType get iconType;
-
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -92,8 +86,6 @@ abstract class UserLocationAnchorChanged
     implements mapkit_layers_object_event.ObjectEvent, ffi.Finalizable {
   /// Gets the type of anchor used.
   UserLocationAnchorType get anchorType;
-
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -182,6 +174,5 @@ abstract class UserLocationLayer implements ffi.Finalizable {
   /// the target object while it is attached to a class.
   void setObjectListener(UserLocationObjectListener? objectListener);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

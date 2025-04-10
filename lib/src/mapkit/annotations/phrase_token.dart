@@ -170,6 +170,7 @@ enum SpeakerPhraseToken {
 
   /// Manoeuvres
   Straight,
+  ContinueStraight,
   WalkStraight,
   EnterRoundabout,
   RouteWillFinish,
@@ -221,12 +222,14 @@ enum SpeakerPhraseToken {
   Speed120,
   Speed130,
 
-  /// Additional camera types
+  /// Additional camera and police types
   Camera,
   RoadMarkingCamera,
   CrossRoadCamera,
   ForbiddenStopCamera,
   MobileCamera,
+  TrafficCamera,
+  PolicePatrol,
 
   /// Events
   Accident,
