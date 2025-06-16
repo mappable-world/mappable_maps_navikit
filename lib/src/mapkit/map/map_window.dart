@@ -32,6 +32,8 @@ import 'package:mappable_maps_navikit/src/mapkit/map/visible_region.dart'
     as mapkit_map_visible_region;
 import 'package:mappable_maps_navikit/src/mapkit/screen_types.dart'
     as mapkit_screen_types;
+import 'package:mappable_maps_navikit/src/mapkit/ui/overlay.dart'
+    as mapkit_ui_overlay;
 import 'package:mappable_maps_navikit/src/runtime/view/surface.dart'
     as runtime_view_surface;
 import 'package:meta/meta.dart';
@@ -183,6 +185,9 @@ abstract class MapWindow implements ffi.Finalizable {
 
   /// Removes external surface. This method is android only
   void removeSurface(runtime_view_surface.Surface surface);
+
+  /// Adds raster screen overlay.
+  mapkit_ui_overlay.Overlay addRasterScreenOverlay();
 
   core.bool isValid();
 }
