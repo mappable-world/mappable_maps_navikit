@@ -44,8 +44,6 @@ import 'package:mappable_maps_navikit/src/mapkit/map/placemark_presentation.dart
     as mapkit;
 import 'package:mappable_maps_navikit/src/mapkit/map/placemark_text.dart'
     as mapkit;
-import 'package:mappable_maps_navikit/src/mapkit/map/placemark_view.dart'
-    as mapkit;
 import 'package:mappable_maps_navikit/src/mapkit/map/placemarks_styler.dart'
     as mapkit;
 import 'package:mappable_maps_navikit/src/mapkit/map/polygon.dart' as mapkit;
@@ -162,7 +160,6 @@ const weakInterfacesMeta = {
   'mapkit.map.PlacemarkPresentation':
       mapkit.PlacemarkPresentationImpl.fromNativePtrImpl,
   'mapkit.map.PlacemarkText': mapkit.PlacemarkTextImpl.fromNativePtrImpl,
-  'mapkit.map.PlacemarkView': mapkit.PlacemarkViewImpl.fromNativePtrImpl,
   'mapkit.map.PlacemarksStyler': mapkit.PlacemarksStylerImpl.fromNativePtrImpl,
   'mapkit.map.PolygonMapObject': mapkit.PolygonMapObjectImpl.fromNativePtrImpl,
   'mapkit.map.PolylineMapObject':
