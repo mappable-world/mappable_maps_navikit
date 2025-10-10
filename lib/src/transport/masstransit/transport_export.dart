@@ -2,6 +2,8 @@ export 'package:mappable_maps_navikit/src/transport/masstransit/transport.dart'
     hide
         MasstransitTransportTransportThreadImpl,
         MasstransitTransportContainerExtension,
+        MasstransitBoardingOptionsRailwayOptionsImpl,
+        MasstransitBoardingOptionsRailwayOptionsContainerExtension,
         MasstransitTransportImpl,
         MasstransitBoardingOptionsBoardingAreaContainerExtension,
         MasstransitTransportThreadAlertClosedUntilNative,
